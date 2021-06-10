@@ -121,7 +121,8 @@ timeline.push(question_se4);*/
 jsPsych.init({
   timeline: timeline,
   on_finish: function() {
-    jsPsychSheet.uploadData(jsPsych.data.get().csv());
+    jsPsych.data.displayData();
+//    jsPsychSheet.uploadData(jsPsych.data.get().csv());
   }
 });
 </script>

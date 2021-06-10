@@ -10,26 +10,22 @@ output:
     css: jspsych-6.3.1/css/jspsych.css
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
-```{r}
-library(htmltools)
-tagList(
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/jspsych.js"),
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"),
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-instructions.js"),
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-text.js"),
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-likert.js"),
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js"),
-tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.js"),
-tags$link(rel="stylesheet",href="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.css")
-)
+
+
+```{=html}
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/jspsych.js"></script>
+<script src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-likert.js"></script>
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js"></script>
+<script src="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.js"></script>
+<link rel="stylesheet" href="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.css"/>
 ```
 
 
-```{js}
+<script type="text/javascript">
 // 実験の説明
 var instruction = {
     type: "survey-text",
@@ -96,4 +92,4 @@ jsPsych.init({
 //    jsPsychSheet.uploadData(jsPsych.data.get().csv());
   }
 });
-```
+</script>
