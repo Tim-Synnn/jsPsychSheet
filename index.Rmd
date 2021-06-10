@@ -17,14 +17,14 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r}
 library(htmltools)
 tagList(
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/jspsych.js"),
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/jspsych.js"),
 tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"),
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-instructions.js"),
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-survey-text.js"),
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-survey-likert.js"),
-tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js")#,
-#$script(src="https://Tim-Synnn.github.io/jspsychsheet.js"),
-#tags$link(rel="stylesheet",href="https://Tim-Synnn.github.io/jspsychsheet.css")
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-instructions.js"),
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-text.js"),
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-likert.js"),
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js"),
+tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.js"),
+tags$link(rel="stylesheet",href="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.css")
 )
 ```
 
