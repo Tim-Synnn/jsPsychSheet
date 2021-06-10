@@ -1,0 +1,80 @@
+---
+title: "IronyTask0607"
+author: "TomoyaYAMADA"
+date: "2021/6/6"
+output:
+  html_document:
+    mathjax: null
+    highlight: null
+    theme: null
+    css: jspsych-6.3.1/css/jspsych.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(htmltools)
+tagList(
+tags$script(src="jspsych-6.3.1/jspsych.js"),
+tags$script(src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"),
+tags$script(src="jspsych-6.3.1/plugins/jspsych-instructions.js"),
+tags$script(src="jspsych-6.3.1/plugins/jspsych-survey-text.js"),
+tags$script(src="jspsych-6.3.1/plugins/jspsych-survey-likert.js"),
+tags$script(src="jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js")
+)
+```
+
+
+```{js}
+// 実験の説明
+var instruction = {
+    type: "survey-text",
+    questions: [
+      {prompt: "何番ですか？半角数字で入力してください", name: 'SubNum', required:"True"}
+    ],
+    button_label: "次へ"//次へのボタンラベルを変更（指定しないと"Continue"と表示される）
+};
+
+//input the texts
+var form_trial = {
+    type: "survey-text",
+    questions: [
+      {prompt: "何番ですか？半角数字で入力してください", name: 'SubNum', required:"True"}
+    ],
+    button_label: "次へ"//次へのボタンラベルを変更（指定しないと"Continue"と表示される）
+};
+
+//選択肢の用意が必要
+var scale_01 = [
+  "〇", 
+  "✕"
+];
+ 
+//リッカート尺度の質問課題を準備
+var question_se = {
+  type: 'survey-likert',
+  questions: [
+    {prompt: "朝起きるのが難しい", labels: scale_01, required: "True"},
+    {prompt: "毎日がバラのようである", labels: scale_01, required: "True"},
+    {prompt: "私は人生において勝ち組である", labels: scale_01, required: "True"},
+    {prompt: "何をやってもうまくいかないことが多い", labels: scale_01, required: "True"},
+    ],
+    button_label: "次へ"
+};
+
+//time line = 実験の順番
+var timeline = [];
+timeline.push(instruction);
+timeline.push(form_trial);
+timeline.push(question_se);
+
+//実験の開始
+jsPsych.init({
+  timeline: timeline,
+  on_finish: function() {
+    jsPsych.data.displayData();
+  }
+});
+```
