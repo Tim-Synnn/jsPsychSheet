@@ -122,7 +122,7 @@ jsPsych.init({
   timeline: timeline,
   on_finish: function() {
   // jsPsych.data.displayData();
-  jsPsychSheet.uploadData(jsPsych.data.get().csv(),"data.csv");
+  jsPsych.data.get().jsPsychSheet.uploadData("csv","data.csv");
   //jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
   }
 });
