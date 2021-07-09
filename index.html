@@ -125,8 +125,8 @@ jsPsych.init({
   show_progress_bar: true,
   on_finish: function() {
   jsPsych.data.displayData();
-  jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
-  jsPsych.data.get().uploadData("csv","data.csv");
+  //jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
+  //jsPsych.data.get().uploadData("csv","data.csv");
   jsPsychSheet.uploadData(jsPsych.data.get().csv());
   }
 });
