@@ -19,10 +19,12 @@ library(htmltools)
 tagList(
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/jspsych.js"),
 tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"),
+tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-image-keyboard-response.js"),
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-instructions.js"),
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-text.js"),
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-likert.js"),
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js"),
+tags$script(src="https://Tim-Synnn.github.io/jspsych-6.3.1/plugins/jspsych-fullscreen.js"),
 tags$script(src="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.js"),
 tags$link(rel="stylesheet",href="https://Tim-Synnn.github.io/jsPsychSheet/jspsychsheet.css")
 )
@@ -91,10 +93,12 @@ timeline.push(question_se4);*/
 //実験の開始
 jsPsych.init({
   timeline: timeline,
+  show_progress_bar: true,
   on_finish: function() {
-  // jsPsych.data.displayData();
+  jsPsych.data.displayData();
+  jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
   jsPsych.data.get().uploadData("csv","data.csv");
-  //jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
+  jsPsychSheet.uploadData(jsPsych.data.get().csv());
   }
 });
 ```
