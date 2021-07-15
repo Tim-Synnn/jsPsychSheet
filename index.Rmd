@@ -57,7 +57,7 @@ var question_se1 = {
     button_label: "次へ"
 };
 
-/*var question_se2 = {
+var question_se2 = {
   type: 'survey-likert',
   questions: [
     {prompt: "毎日がバラのようである", labels: scale_01, required: "True"}
@@ -80,15 +80,15 @@ var question_se4 = {
     ],
     button_label: "次へ"
 };
-*/
+
 
 //time line = 実験の順番
 var timeline = [];
 timeline.push(instruction);
 timeline.push(question_se1);
-/*timeline.push(question_se2);
+timeline.push(question_se2);
 timeline.push(question_se3);
-timeline.push(question_se4);*/
+timeline.push(question_se4);
 
 //実験の開始
 jsPsych.init({
@@ -96,8 +96,8 @@ jsPsych.init({
   show_progress_bar: true,
   on_finish: function() {
   jsPsych.data.displayData();
-  //jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
-  //jsPsych.data.get().uploadData("csv","data.csv");
+  jsPsych.data.get().localSave("csv","data.csv"); //local 保存OK
+  jsPsych.data.get().uploadData("csv","data.csv");
   jsPsychSheet.uploadData(jsPsych.data.get().csv());
   }
 });
